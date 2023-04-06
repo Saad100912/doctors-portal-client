@@ -1,9 +1,7 @@
-import React, { useState } from "react";
-import { format } from "date-fns";
+import React from "react";
 import { DayPicker } from "react-day-picker";
 
-const AppointmentBanner = () => {
-    const [selectedDate, setSelectedDate] = useState(new Date());
+const AppointmentBanner = ({ selectedDate, setSelectedDate }) => {
     return (
         <div>
             <div className="hero min-h-[550px]">
@@ -23,9 +21,6 @@ const AppointmentBanner = () => {
                     </div>
                 </div>
             </div>
-            <p className="flex justify-center">
-                You have selected date: {format(selectedDate, "PPPP")}
-            </p>
         </div>
     );
 };
