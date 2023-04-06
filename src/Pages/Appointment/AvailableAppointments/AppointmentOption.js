@@ -1,6 +1,6 @@
 import React from "react";
 
-const AppointmentOption = ({ data }) => {
+const AppointmentOption = ({ data, setSelectedAppointmentOption }) => {
     const { name, slots } = data;
     return (
         <div className="card">
@@ -14,9 +14,14 @@ const AppointmentOption = ({ data }) => {
                     Available
                 </p>
                 <div className="card-actions justify-center">
-                    <button className="btn btn-primary bg-gradient-to-r from-secondary to-primary font-medium text-white">
+                    <label
+                        htmlFor="booking-modal"
+                        className="btn btn-primary bg-gradient-to-r from-secondary to-primary font-medium text-white"
+                        onClick={() => setSelectedAppointmentOption(data)}
+                        disabled={slots.length === 0}
+                    >
                         Book Appointment
-                    </button>
+                    </label>
                 </div>
             </div>
         </div>
